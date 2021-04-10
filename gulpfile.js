@@ -58,6 +58,12 @@ gulp.task("babel", done => {
     done();
 })
 
+gulp.task("bootstrap", done => {
+    gulp.src("bootstrap/**")
+        .pipe(gulp.dest("dist/bootstrap"))
+        .pipe(connect.reload());;
+    done();
+})
 
 //监听文件变化，一旦监听的文件发生变化，就执行指定的任务
 gulp.task("watch", done => {
@@ -79,5 +85,5 @@ gulp.task("server", done => {
 
     done();
 });
-gulp.task("build", gulp.series("indexhtml", "html", "css", "js", "img", "babel"));
+gulp.task("build", gulp.series("indexhtml", "html", "css", "js", "img", "babel", "bootstrap"));
 gulp.task("default", gulp.series("build", "server", "watch"));

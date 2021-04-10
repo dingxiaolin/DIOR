@@ -6,11 +6,261 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 引入bootstrap的样式 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
     <link rel="stylesheet" href="css/index.css">
+    <!-- 引入swiper的js -->
+    <script src="js/swiper.js"></script>
 </head>
 
 <body>
-    <div>这是DIOR首页</div>
+    <!-- 导航栏 -->
+    <div class="container">
+        <div class="nav">
+            <div class="row">
+                <div class="col-md-1">
+                    <button>
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        <span>目录</span>
+                    </button>
+                </div>
+                <div class="col-md-3 search">
+                    <input type="text" value="在dior.cn上进行搜索" class="text-muted"></input>
+                    <span class="glyphicon glyphicon-search" style="font-size: large;text-align:center;"></span>
+                </div>
+                <div class="col-md-5 logo">DIOR</div>
+                <div class="col-md-offset-1 col-md-2 info">
+                    <span>图标</span>
+                    <span>图标</span>
+                    <span>图标</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- banner 轮播图 -->
+    <div class="container">
+        <div class="banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="lunbo">
+                            <img src="https://www.dior.cn/couture/var/dior/storage/images/horizon/home-one-dior/block-cover-cdc-fall-2021-ready-to-wear-show/block-cover-item-cdc-femme-sacs/23913465-3-chi-CN/cdc-fall-2021-ready-to-wear-show15_1440_1200.jpg"
+                                alt="">
+                            <div class="intro">
+                                <p>2021年4月12日晚上9:00 (北京时间)线上发布</p>
+                                <div>迪奥二零二一秋季成衣系列</div>
+                                <button><span>探索</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="lunbo">
+                            <img src="https://www.dior.cn/couture/var/dior/storage/images/horizon/block-cover-cover_news/block-cover-item-pcd-j’adore-eau-de-parfum-infinissime/20758452-2-chi-CN/pcd-j’adore-eau-de-parfum-infinissime_1440_1200.jpg"
+                                alt="">
+                            <div class="intro">
+                                <p>香氛</p>
+                                <div>缪斯香水</div>
+                                <button><i>图标</i><span>立即购买</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="lunbo">
+                            <img src="https://www.dior.cn/couture/var/dior/storage/images/horizon/block-cover-cover_news/block-cover-item-cdc-femme-dior-chez-moi/23900431-2-chi-CN/cdc-femme-dior-chez-moi_1440_1200.jpg"
+                                alt="">
+                            <div class="intro">
+                                <p>女士精品</p>
+                                <div>迪奥二零二一春夏成衣系列</div>
+                                <button><i>图标</i><span>立即购买</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="lunbo">
+                            <img src="https://www.dior.cn/couture/var/dior/storage/images/horizon/block-cover-cover_news/block-cover-item-pcd-cover-dior-forever/23602184-26-chi-CN/pcd-cover-dior-forever_1440_1200.jpg"
+                                alt="">
+                            <div class="intro">
+                                <p>彩妆</p>
+                                <div>迪奥锁妆粉底液</div>
+                                <button><i>图标</i><span>立即购买</span></button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="lunbo">
+                            <img src="https://www.dior.cn/couture/var/dior/storage/images/23008596/12-chi-CN/cdc-homme-men-summer-2124_1440_1200.jpg"
+                                alt="">
+                        </div>
+                        <div class="intro">
+                            <p> 男士精品</p>
+                            <div>迪奥二零二一夏 季男装系列</div>
+                            <button><i>图标</i><span>立即选购</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Arrows上下箭头 -->
+                <div class="swiper-button-next">&gt;</div>
+                <div class="swiper-button-prev">&lt;</div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination">
+            </div>
+        </div>
+    </div>
+
+    <!-- 详情轮播图 -->
+    <div class="detail-wrap">
+        <div class="detail">
+            <div class="swiper-container1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <!--  <div class="box">
+                            <ul>
+                                <li><img src="" alt=""></li>
+                            </ul>
+                        </div> -->
+                        slider1
+                    </div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <!-- Add Pagination 添加页码 -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows  添加上一张下一张-->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 女士产品 -->
+    <div class="container">
+        <div class="forwomen">
+            <h1>女士</h1>
+            <p>从标志性杰作到最新作品，探索Dior迪奥演绎的妩媚魅力。</p>
+            <div class="box">
+                <img src="img/womenbig.png" alt="">
+            </div>
+            <h2>手提包</h2>
+            <div class="article">
+                <ul>
+                    <li>
+                        <img src="img/women1.png" alt="">
+                        <p>手提包</p>
+                    </li>
+                    <li>
+                        <img src="img/women2.png" alt="">
+                        <p>小型皮具</p>
+                    </li>
+                    <li>
+                        <img src="img/women3.png" alt="">
+                        <p>真我 缪斯香水</p>
+                    </li>
+                    <li>
+                        <img src="img/women4.png" alt="">
+                        <p>MAISON CHRISTIAN DIOR</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 男士产品 -->
+    <div class="container">
+        <div class="forwomen">
+            <h1>男士</h1>
+            <p>从经典精品到最新作品，探索Dior迪奥的男士世界。</p>
+            <div class="box">
+                <img src="img/menbig.png" alt="">
+            </div>
+            <h2>迪奥二零二一夏季男装系列</h2>
+            <div class="article">
+                <ul>
+                    <li>
+                        <img src="img/men1.png" alt="">
+                        <p>太阳眼镜</p>
+                    </li>
+                    <li>
+                        <img src="img/men2.png" alt="">
+                        <p>鞋履</p>
+                    </li>
+                    <li>
+                        <img src="img/men3.png" alt="">
+                        <p>MAISON CHRISTIAN DIOR</p>
+                    </li>
+                    <li>
+                        <img src="img/men4.png" alt="">
+                        <p>DIOR迪奥旷野男士香水系列</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 儿童产品 -->
+    <div class="container">
+        <div class="forwomen">
+            <h1>童装</h1>
+            <p>Dior迪奥童装与婴儿服装凝聚品牌无限创意及精湛工艺。 </p>
+            <div class="box">
+                <img src="img/childrenbig.png" alt="">
+            </div>
+            <h2>BABY DIOR 二零二一早秋成衣系列</h2>
+            <div class="article">
+                <ul>
+                    <li>
+                        <img src="img/children1.png" alt="">
+                        <p>女童</p>
+                    </li>
+                    <li>
+                        <img src="img/children2.png" alt="">
+                        <p>男童</p>
+                    </li>
+                    <li>
+                        <img src="img/children3.png" alt="">
+                        <p>女装</p>
+                    </li>
+                    <li>
+                        <img src="img/children4.png" alt="">
+                        <p>男装</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            slidesPerView: 1,
+            paginationClickable: true,
+            spaceBetween: 30,
+            loop: true
+        });
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            slidesPerView: 1,
+            paginationClickable: true,
+            spaceBetween: 30,
+            loop: true
+        });
+    </script>
+
 
 </body>
 
