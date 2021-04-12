@@ -8,7 +8,7 @@ const babel = require("gulp-babel");
 const sourcemaps = require("gulp-sourcemaps");
 
 gulp.task("html", done => {
-    gulp.src("*.html!index.html").pipe(gulp.dest("dist/html")).pipe(connect.reload());
+    gulp.src("./*.html").pipe(gulp.dest("dist/html")).pipe(connect.reload());
     done();
 })
 gulp.task("indexhtml", done => {
@@ -68,7 +68,7 @@ gulp.task("bootstrap", done => {
 //监听文件变化，一旦监听的文件发生变化，就执行指定的任务
 gulp.task("watch", done => {
     gulp.watch("index.html", gulp.series("indexhtml"));
-    gulp.watch("*.html", gulp.series("html"));
+    gulp.watch("*.html !index.html", gulp.series("html"));
     gulp.watch("sass/*.scss", gulp.series("css"));
     gulp.watch("js/*.js", gulp.series("js"));
     gulp.watch("img/**", gulp.series("img"));

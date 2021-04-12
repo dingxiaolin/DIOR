@@ -1,0 +1,27 @@
+@import "reset.scss";
+header,h1{
+    margin: 0 auto;
+}
+header{
+    width: 920px;
+    padding-bottom: 40px;
+    border-bottom:1px solid #e5e5e5;
+    ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        li{
+            display: flex;
+            justify-content: space-between;
+            a{
+                font-size: 14px;
+                color: #cecece;
+            }
+
+    }
+   
+
+
+
+    }
+}

@@ -6,37 +6,183 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <!-- 引入bootstrap的样式 -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/reset.css">
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 
     <link rel="stylesheet" href="css/index.css">
+
     <!-- 引入swiper的js -->
     <script src="js/swiper.js"></script>
 </head>
 
 <body>
     <!-- 导航栏 -->
-    <div class="container">
-        <div class="nav">
-            <div class="row">
-                <div class="col-md-1">
-                    <button>
-                        <span class="glyphicon glyphicon-menu-hamburger"></span>
-                        <span>目录</span>
-                    </button>
-                </div>
-                <div class="col-md-3 search">
-                    <input type="text" value="在dior.cn上进行搜索" class="text-muted"></input>
-                    <span class="glyphicon glyphicon-search" style="font-size: large;text-align:center;"></span>
-                </div>
-                <div class="col-md-5 logo">DIOR</div>
-                <div class="col-md-offset-1 col-md-2 info">
-                    <span>图标</span>
-                    <span>图标</span>
-                    <span>图标</span>
-                </div>
+    <div class="nav">
+        <div class="nav-top ">
+            <div class="search">
+                <input type="text" value="在dior.cn上进行搜索">
+                <span>搜索</span>
             </div>
+            <div class="zi">DIOR</div>
+            <div class="func">
+                <ul>
+                    <li><span>收藏</span></li>
+                    <li><span>用户</span></li>
+                    <li><span>购物</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <ul>
+                <li>
+                    <a href="">女士精品</a>
+                    <div class="list">
+                        <ul>
+                            <li class="title"><a href="">最新动态</a></li>
+                            <li class="pic"><img src="img/womensmall.png" alt=""></li>
+                            <li><a href="">迪奥二零二一春夏成衣系列</a></li>
+                            <li class="line"></li>
+                            <li><a href="">迪奥烂漫春日优雅力量</a></li>
+                            <li><a href="">迪奥二零二一秋季成衣系列上海发布秀</a></li>
+                            <li><a href="">信使包&双肩背包</a></li>
+                            <li class="title"><a href="">选购造型同款</a></li>
+                            <li><a href="">迪奥二零二一春夏成衣列</a></li>
+                            <li><a href="">迪奥二零二一早春成衣列</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">包袋系列</a></li>
+                            <li><a href="">手袋</a></li>
+                            <li><a href="">托特包</a></li>
+                            <li><a href="">迷你手袋&腰包</a></li>
+                            <li><a href="">信使包&双肩背包</a></li>
+                            <li><a href="">旅行配饰</a></li>
+                            <li><a href=""> 肩带</a></li>
+                            <li class="line"></li>
+                            <li><a href=""> Dior Caro</a></li>
+                            <li><a href="">Lady Dior</a></li>
+                            <li><a href=""> Dior Book Tote</a></li>
+                            <li><a href="">Saddle</a></li>
+                            <li><a href="">30Montaigne</a></li>
+                            <li><a href=""> Dior Bobby</a></li>
+                            <li><a href="">Dior St Honore</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">小型皮具</a></li>
+                            <li><a href="">手拿包</a></li>
+                            <li><a href="">长款钱包</a></li>
+                            <li><a href="">卡夹和小件配饰</a></li>
+                            <li><a href="">科技配饰</a></li>
+                            <li><a href="">短款钱包</a></li>
+
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">高级成衣</a></li>
+                            <li><a href="">外套</a></li>
+                            <li><a href="">连衣裙</a></li>
+                            <li><a href="">半身裙</a></li>
+                            <li><a href="">衬衫</a></li>
+                            <li><a href="">长裤&短裤</a></li>
+                            <li><a href=""> 针织衫</a></li>
+                            <li><a href=""> T恤</a></li>
+                            <li><a href=""> 牛仔系列</a></li>
+                            <li class="line"></li>
+                            <li><a href="">30 Montaigne经典系列</a></li>
+                            <li><a href=""> 经典西装外套(Bar Jacket)</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">鞋履系列</a></li>
+                            <li><a href="">高跟鞋</a></li>
+                            <li><a href="">运动鞋</a></li>
+                            <li><a href="">凉拖</a></li>
+                            <li><a href="">草编鞋</a></li>
+                            <li><a href="">芭蕾平底鞋及其他平底</a></li>
+                            <li><a href=""> 鞋履</a></li>
+                            <li><a href=""> 凉鞋</a></li>
+                            <li><a href=""> 长靴&短靴</a></li>
+                            <li class="line"></li>
+                            <li><a href=""> J' Adior</a></li>
+                            <li><a href="">D-Connect</a></li>
+                            <li><a href="">Walk'n'Dior</a></li>
+                            <li><a href=""> Dway</a></li>
+                            <li><a href="">新款DIOR-ID运动鞋全新上市</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">时尚首饰</a></li>
+                            <li><a href="">耳环</a></li>
+                            <li><a href="">项链</a></li>
+                            <li><a href="">手链/手镯</a></li>
+                            <li><a href=""> 戒指</a></li>
+                            <li><a href="">胸针&配饰</a></li>
+                            <li class="line"></li>
+                            <li><a href=""> Dior Tribales</a></li>
+                            <li><a href="">J'Adior</a></li>
+                            <li><a href=""> My ABCDior</a></li>
+                            <li><a href="">30Montaigne</a></li>
+                            <li><a href=""> Dior Bobby</a></li>
+                            <li><a href="">Dior St Honore</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">配饰系列</a></li>
+                            <li><a href="">太阳眼镜</a></li>
+                            <li><a href="">腰带</a></li>
+                            <li><a href="">披肩和斗篷</a></li>
+                            <li><a href=""> 丝巾& Mitzah丝巾</a></li>
+                            <li><a href=""> 披肩</a></li>
+                            <li><a href=""> 围巾和针织品</a></li>
+                            <li><a href="">帽子&手套</a></li>
+                            <li class="line"></li>
+                            <li><a href=""> My ABCDior</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">高级珠宝</a></li>
+                            <li><a href="">戒指</a></li>
+                            <li><a href="">耳环</a></li>
+                            <li><a href="">项链</a></li>
+                            <li><a href="">手链/手镯</a></li>
+                            <li><a href="">订婚及结婚戒指</a></li>
+                            <li class="line"></li>
+                            <li><a href=""> Rose des vents</a></li>
+                            <li><a href=""> La Rose Dior</a></li>
+                            <li><a href="">GEM DIOR</a></li>
+                            <li><a href="">Mimirose</a></li>
+                            <li><a href="">Oui</a></li>
+                            <li class="title"><a href="">高级腕表</a></li>
+                            <li><a href="">GEM DIOR</a></li>
+                            <li><a href="">La D de Dior</a></li>
+                            <li><a href="">Dior Grand Bal</a></li>
+                            <li><a href="">Dior Grand Soir</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="">男士精品</a>
+
+                </li>
+                <li>
+                    <a href="">香氛</a>
+                </li>
+                <li>
+                    <a href="">彩妆</a>
+                </li>
+                <li>
+                    <a href="">护肤</a>
+                </li>
+                <li>
+                    <a href="">童装精品</a>
+                </li>
+                <li>
+                    <a href="">家居</a>
+                </li>
+                <li>
+                    <a href="">臻选之礼</a>
+                </li>
+                <li>
+                    <a href="">最新资讯及发布秀</a>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -63,7 +209,7 @@
                             <div class="intro">
                                 <p>香氛</p>
                                 <div>缪斯香水</div>
-                                <button><i>图标</i><span>立即购买</span></button>
+                                <button><i>icon</i><span>立即购买</span></button>
                             </div>
                         </div>
                     </div>
@@ -74,7 +220,7 @@
                             <div class="intro">
                                 <p>女士精品</p>
                                 <div>迪奥二零二一春夏成衣系列</div>
-                                <button><i>图标</i><span>立即购买</span></button>
+                                <button><i>icon</i><span>立即购买</span></button>
                             </div>
                         </div>
                     </div>
@@ -85,7 +231,7 @@
                             <div class="intro">
                                 <p>彩妆</p>
                                 <div>迪奥锁妆粉底液</div>
-                                <button><i>图标</i><span>立即购买</span></button>
+                                <button><i>icon</i><span>立即购买</span></button>
                             </div>
 
                         </div>
@@ -94,82 +240,140 @@
                         <div class="lunbo">
                             <img src="https://www.dior.cn/couture/var/dior/storage/images/23008596/12-chi-CN/cdc-homme-men-summer-2124_1440_1200.jpg"
                                 alt="">
-                        </div>
-                        <div class="intro">
-                            <p> 男士精品</p>
-                            <div>迪奥二零二一夏 季男装系列</div>
-                            <button><i>图标</i><span>立即选购</span></button>
+                            <div class="intro">
+                                <p> 男士精品</p>
+                                <div>迪奥二零二一夏 季男装系列</div>
+                                <button><i>图标</i><span>立即选购</span></button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Add Arrows上下箭头 -->
+
                 <div class="swiper-button-next">&gt;</div>
                 <div class="swiper-button-prev">&lt;</div>
             </div>
-            <!-- Add Pagination -->
+
             <div class="swiper-pagination">
             </div>
         </div>
     </div>
-
-    <!-- 详情轮播图 -->
-    <div class="detail-wrap">
-        <div class="detail">
-            <div class="swiper-container1">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <!--  <div class="box">
-                            <ul>
-                                <li><img src="" alt=""></li>
-                            </ul>
-                        </div> -->
-                        slider1
-                    </div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <!-- Add Pagination 添加页码 -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Add Arrows  添加上一张下一张-->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+    <!-- 重要产品轮播图 -->
+    <div class="mainwrap">
+        <div class="main">
+            <div class="select">
+                <div class="select-date">
+                    <div class="day"></div>
+                    <div class="line"></div>
+                    <div class="month"></div>
                 </div>
+                <h2>精选</h2>
+            </div>
+            <div class="pic">
+                <ul>
+                    <li>
+                        <div class="xin">
+                            <img src="img/1.png" alt="">
+                            <span>收藏</span>
+                        </div>
+
+                        <div class="wen">
+                            <!-- 模板字符串 -->
+                            <p class="dis">#新品</p>
+                            <span>DiorTravel多功能手拿包</span>
+                            <div>蓝色科技面料茹伊印花</div>
+                            <p class="price">￥8800</p>
+                            <button><i>icon</i><span>立即选购</span></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="xin">
+                            <img src="img/2.png" alt="">
+                            <span>收藏</span>
+                        </div>
+                        <div class="wen">
+                            <!-- 模板字符串 -->
+                            <p class="dis">#新品</p>
+                            <span>DiorTravel多功能手拿包</span>
+                            <div>蓝色科技面料茹伊印花</div>
+                            <p class="price">￥8800</p>
+                            <button><i>icon</i><span>立即选购</span></button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="xin">
+                            <img src="img/3.png" alt="">
+                            <span>收藏</span>
+                        </div>
+                        <div class="wen">
+                            <!-- 模板字符串 -->
+                            <p class="dis">#新品</p>
+                            <span>DiorTravel多功能手拿包</span>
+                            <div>蓝色科技面料茹伊印花</div>
+                            <p class="price">￥8800</p>
+                            <button><i>icon</i><span>立即选购</span></button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="xin">
+                            <img src="img/3.png" alt="">
+                            <span>收藏</span>
+                        </div>
+                        <div class="wen">
+                            <!-- 模板字符串 -->
+                            <p class="dis">#新品</p>
+                            <span>DiorTravel多功能手拿包</span>
+                            <div>蓝色科技面料茹伊印花</div>
+                            <p class="price">￥8800</p>
+                            <button><i>icon</i><span>立即选购</span></button>
+                        </div>
+                    </li>
+                </ul>
+
+
+
+
+            </div>
+            <div class="nav">
 
             </div>
         </div>
     </div>
 
+
+
+
     <!-- 女士产品 -->
-    <div class="container">
-        <div class="forwomen">
-            <h1>女士</h1>
-            <p>从标志性杰作到最新作品，探索Dior迪奥演绎的妩媚魅力。</p>
-            <div class="box">
-                <img src="img/womenbig.png" alt="">
-            </div>
-            <h2>手提包</h2>
-            <div class="article">
-                <ul>
-                    <li>
-                        <img src="img/women1.png" alt="">
-                        <p>手提包</p>
-                    </li>
-                    <li>
-                        <img src="img/women2.png" alt="">
-                        <p>小型皮具</p>
-                    </li>
-                    <li>
-                        <img src="img/women3.png" alt="">
-                        <p>真我 缪斯香水</p>
-                    </li>
-                    <li>
-                        <img src="img/women4.png" alt="">
-                        <p>MAISON CHRISTIAN DIOR</p>
-                    </li>
-                </ul>
-            </div>
+    <div class="forwomen">
+        <h1>女士</h1>
+        <p>从标志性杰作到最新作品，探索Dior迪奥演绎的妩媚魅力。</p>
+        <div class="box">
+            <img src="img/womenbig.png" alt="">
+        </div>
+        <h2>手提包</h2>
+        <div class="article">
+            <ul>
+                <li>
+                    <img src="img/women1.png" alt="">
+                    <p>手提包</p>
+                </li>
+                <li>
+                    <img src="img/women2.png" alt="">
+                    <p>小型皮具</p>
+                </li>
+                <li>
+                    <img src="img/women3.png" alt="">
+                    <p>真我 缪斯香水</p>
+                </li>
+                <li>
+                    <img src="img/women4.png" alt="">
+                    <p>MAISON CHRISTIAN DIOR</p>
+                </li>
+            </ul>
         </div>
     </div>
     <!-- 男士产品 -->
-    <div class="container">
+    <div class="men">
         <div class="forwomen">
             <h1>男士</h1>
             <p>从经典精品到最新作品，探索Dior迪奥的男士世界。</p>
@@ -200,7 +404,7 @@
         </div>
     </div>
     <!-- 儿童产品 -->
-    <div class="container">
+    <div class="children">
         <div class="forwomen">
             <h1>童装</h1>
             <p>Dior迪奥童装与婴儿服装凝聚品牌无限创意及精湛工艺。 </p>
@@ -230,26 +434,97 @@
             </div>
         </div>
     </div>
+    <div class="map">
+        <h1>精品店</h1>
+        <div class="search">
+            <input type="text" value="城市，邮编，国家/地区">
+            <span>搜索</span>
+        </div>
+    </div>
 
+    <div class="servewrap">
+        <div class="serve">
+            <h2>DIOR迪奥线上精品店专享服务</h2>
+            <div class="ha">
+                <ul>
+                    <li>
+                        <div class="pic">pic</div>
+                        <h3>免费配送</h3>
+                        <p>所有订单均享免费顺丰速递</p>
+                    </li>
+                    <li>
+                        <div class="pic">pic</div>
+                        <h3>免费配送</h3>
+                        <p>非定制商品订单自签收日起7天内可享无理由退货</p>
+                    </li>
+                    <li>
+                        <div class="pic">pic</div>
+                        <h3>免费配送</h3>
+                        <p>您的订单将尊享Dior迪奥艺术包装并随附个性化定制祝福</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <ul>
+            <li>
+                <p>电子通讯</p>
+                <h5>立即订阅，掌握迪奥最新动态资讯</h5>
+                <div class="search">
+                    <input type="text" value="*输入你的邮箱">
+                    <span>确定</span>
+                </div>
+            </li>
+            <li>
+                <a href="">联系我们</a>
+                <a href="">配送及退换货</a>
+                <a href="">常见问题</a>
+                <a href="">使用条款</a>
+                <a href="">数据保护章程</a>
+                <a href="">数据保护意程</a>
+                <a href="">二般销售条件</a>
+                <ul>
+                    <li>
+                        <img src="https://media.dior.cn/hzn/china-1.png" alt="">
+                        <a href="">电子营业执照</a>
+                    </li>
+                    <li>
+                        <img src="https://media.dior.cn/hzn/china-0.png" alt="">
+                        <a href="">沪公网安备31010602002343号</a>
+                    </li>
+                    <li>
+                        <img src="https://media.dior.cn/hzn/china-3.png" alt="">
+                        <a href="">沪CP备19005922号</a>
+                    </li>
+                    <p>尚圃电子商务(上海)有限公司</p>
+                    <p>上海市南京西路1266号恒隆广场1期29F</p>
+                </ul>
 
+            </li>
+            <li>
+                <p>关注我们</p>
+                <div class="wei">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </div>
+                <div class="line"></div>
+                <p>国家/地区</p>
+                <div class="sea">
+                    <span>
+                        <span>物</span>
+                        <span>中国大陆i(CNY￥)</span>
+                    </span>
+                    <span>下</span>
 
-
-
-
-
-
-
-
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="top"> 上</div>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/index.js"></script>
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            slidesPerView: 1,
-            paginationClickable: true,
-            spaceBetween: 30,
-            loop: true
-        });
         var swiper = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
             nextButton: '.swiper-button-next',
