@@ -6,26 +6,107 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
     <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/jquery-1.11.3.js"></script>
 </head>
 
 <body>
     <header>
         <ul>
-            <li>&lt;</li>
-            <li>DIOR</li>
+            <li><a href="">&lt;</a></li>
+            <p>DIOR</p>
+            </li>
             <li>
-                <span>收藏</span>
-                <span>用户</span>
-                <span>购物</span>
+                <span class="iconfont icon-xin"></span>
+                <span class="iconfont icon-yonghu"></span>
+                <span class="iconfont icon-gouwudai"></span>
             </li>
         </ul>
     </header>
-    <h1>登录或创建用户</h1>
+    <div class="info">
+        <h1>登录或创建用户</h1>
+        <form action="">
+            <ul class="sect">
+                <li>
+                    <h3>手机验证码登录</h3>
+                    <h3>密码登录</h3>
+                </li>
+                <li>
+                    <input type="text" placeholder="*手机号" id="checkPhone">
+                </li>
+                <li>
+                    <input type="text" placeholder="*验证码">
+                    <span class="shu" id="yanzheng"></span>
+                </li>
+                <li>
+                    <input type="text" placeholder="*短信验证码">
+                    <button>发送</button>
+                </li>
+                <input type="button" value="登录" class="on">
+            </ul>
+            <ul class="selected">
+                <li>
+                    <h3>密码登录</h3>
+                    <h3>手机验证码登录</h3>
+                </li>
+                <li>
+                    <label for="">用户名*</label><input type="text" placeholder="手机号/邮箱" class="checkPhone"
+                        id="checkPhone1">
+                </li>
+                <li>
+                    <label for="">密码*</label><input type="text" placeholder="密码" id="yanzheng1">
+                </li>
+                <input type="button" value="登录" class="on1">
+            </ul>
+            <div class="line"></div>
+            <ul id="zhuce">
+                <h3>注册Dior账户</h3>
+                <p>注册Dior账号以便追踪您的订单，管理收货地址，获取更多个性化信息</p>
+                <input type="button" class="btn" value="创建用户">
+            </ul>
+        </form>
+    </div>
+    <script src="../js/login.js"></script>
+    <script>
+        $(function () {
+
+            $("#zhuce").find(".btn").click(function () {
+                $(window).attr('location', "regist.html");
+            });
 
 
+            $(".on").click(function () {
+                $.get("http://jx.xuzhixiang.top/ap/api/login.php", {
+                    username: $("#checkPhone").val(),
+                    password: $("#yanzheng").val()
+                }, res => {
+                    console.log(res, res.code);
+                    if (res.code == 1) {
+                        alert("登录成功！")
+                    } else {
+                        alert("请先注册")
+                    }
+                })
+            })
+            $(".on1").click(function () {
+                $.get("http://jx.xuzhixiang.top/ap/api/login.php", {
+                    username: $("#checkPhone1").val(),
+                    password: $("#yanzheng1").val()
+                }, res => {
+                    console.log(res, res.code);
+                    if (res.code == 1) {
+                        alert("登录成功！")
+                    } else {
+                        alert("请先注册")
+                    }
+                })
+            })
+        })
 
 
+    </script>
 </body>
 
 </html>

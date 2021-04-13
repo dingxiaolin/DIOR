@@ -51,16 +51,52 @@ $(function () {
             $(".top").hide();
         }
     })
+
+    $(".sea").click(function (e) {
+        $(".lie").toggle();
+        e.stopPropagation();
+        console.log($(".lie").attr("style") == "display: none;");
+        if ($(".lie").attr("style") == "display: block;") {
+            $("#icon").attr("class", "iconfont icon-xialajiantou1");
+        } else {
+            $("#icon").attr("class", "iconfont icon-xialajiantou")
+        }
+    })
+
+    $(".func").find(".icon-yonghu").click(function () {
+        $(window).attr('location', "html/login.html");
+    })
+
+    /*  $(".jiantou").find(".zuo").click(function () {
+         console.log(this);
+         $(".luoboto >ul").stop().animate({ "left": "-1230px" })
+ 
+     }) */
+    $(".jiantou").find(".right").click(function () {
+        $(".lunbotu ul").stop().animate({ "left": "-1230px" })
+    })
+
+
 })
 let oTop = document.getElementsByClassName("top")[0];
 oTop.onclick = function () {
-    let w = document.documentElement.scrollTop || document.body.scrollTop;
     clearInterval(timer1);
     var timer1 = setInterval(() => {
+        var w = document.documentElement.scrollTop || document.body.scrollTop;
+        var ispeed = w / 8;
+        ispeed = ispeed > 0 ? Math.ceil(ispeed) : Math.floor(ispeed);
+        if (w == 0) {
+            clearInterval(timer1);
+        }
+        else {
+            document.documentElement.scrollTop = document.body.scrollTop = w - ispeed;
+        }
+    }, 20);
+}
+function Slider() {
+    constructor(id) {
 
-
-
-    }, 400);
+    }
 }
 
 

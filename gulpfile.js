@@ -64,11 +64,18 @@ gulp.task("bootstrap", done => {
         .pipe(connect.reload());;
     done();
 })
+gulp.task("font", done => {
+    gulp.src("font/**")
+        .pipe(gulp.dest("dist/font"))
+        .pipe(connect.reload());;
+    done();
+
+})
 
 //监听文件变化，一旦监听的文件发生变化，就执行指定的任务
 gulp.task("watch", done => {
     gulp.watch("index.html", gulp.series("indexhtml"));
-    gulp.watch("*.html !index.html", gulp.series("html"));
+    gulp.watch("*.html", gulp.series("html"));
     gulp.watch("sass/*.scss", gulp.series("css"));
     gulp.watch("js/*.js", gulp.series("js"));
     gulp.watch("img/**", gulp.series("img"));
@@ -85,5 +92,5 @@ gulp.task("server", done => {
 
     done();
 });
-gulp.task("build", gulp.series("indexhtml", "html", "css", "js", "img", "babel", "bootstrap"));
+gulp.task("build", gulp.series("indexhtml", "html", "css", "js", "img", "babel", "bootstrap", "font"));
 gulp.task("default", gulp.series("build", "server", "watch"));

@@ -54,6 +54,8 @@ html,body{
         li{
             span{
                 text-align: center;
+                font-size: 25px;
+                cursor: pointer;
             }  
             padding-right: 26px;
         }     
@@ -242,61 +244,107 @@ html,body{
         h2{
           text-align: center;
           font-size: 32px;
+          margin-bottom: 10px;
         }      
     }
     .pic{
-        width: 1340px;
-        padding:0 50px;
-       
-        position: relative;
-        ul{  
-            width: 1340px;
-            position: absolute;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: chartreuse;
-            padding:  0 50px;
-            li{
-                width: 364px;
-                padding: 10px;
-                text-align: center;
-                .xin{
-                    position: relative;
-                    img{
-                        width: 100%;
+        width: 1440px;
+        height: 600px;
+        padding:0 70px; 
+        position: relative; 
+        .lunbotu{
+            width:1230px;
+            height: 600px;
+            overflow: hidden;
+            position: relative; 
+            ul{  
+                width: 2460px;
+                position: absolute;
+                top:0;
+                left: 0;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background: chartreuse;
+                li{
+                    width: 360px;
+                    text-align: center;
+                    .xin{
+                        position: relative;
+                        img{
+                            width: 100%;
+                        }
+                        span{
+                            position: absolute;
+                            display: block;
+                            top: 0;
+                            right: 0;
+                            font-size: 40px;
+                            
+                        }
+                    }   
+                    .wen{
+                        height: 100px;
+                        .iconfont{
+                            height: 50px;
+                            height: 50px;
+                        }
+                        .dis{
+                            margin-top: 10px;
+                            color: #cecece;
+                            font-size: 14px;
+                        }
+                        span{
+                            display: block;
+                            font-weight: 900;
+                            margin-bottom: 100px;
+                            
+                        }
+                        .price{
+                            margin-bottom: 20px;
+                        }
+                        button{
+                            color: white;
+                            background-color: black;
+                            border: none;
+                            width: 160px;
+                            height: 48px;
+                            border-radius: 24px;
+                        }
                     }
-                    span{
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                    }
-                }   
-                .wen{
-                    .dis{
-                        margin-top: 10px;
-                        color: #cecece;
-                        font-size: 14px;
-                    }
-                    span{
-                        display: block;
-                        font-weight: 900;
-                        margin-bottom: 100px;
-                        
-                    }
-                    .price{
-                        margin-bottom: 20px;
-                    }
-                    button{
-                        color: white;
-                        background-color: black;
-                        border: none;
-                        width: 160px;
-                        height: 48px;
-                        border-radius: 24px;
-                    }
+    
                 }
-
+            }
+        }
+        .nav{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            ul{
+                display: flex;
+                li{
+                    width: 10px;
+                    height: 10px;
+                    background: #cecece;
+                    border-radius: 10px;
+                    margin-right: 3px;
+                }
+            }
+        }
+        .jiantou{
+            font-size: 24px;
+            &:hover{
+                cursor: pointer;
+            }
+            .zuo{
+                position: absolute;
+                left: 0;
+                top: 250px;
+            }
+            .right{
+                position: absolute;
+                right: 40px;
+                top: 250px;
             }
         }
 
@@ -515,25 +563,46 @@ html,body{
                justify-content: space-around;
                padding-bottom: 20px;
                border-bottom: 1px solid #cecece;
-               img{
-                   width: 50px;
-                   height: 50px;
-                   background: blue;
+               .iconfont{
+                  font-size: 27px;
+                  cursor: pointer;
                }
            }
            .line{
                margin-bottom: 20px;
            }
            .sea{
+               cursor: pointer;
                width: 323px;
                height: 44px;
                border-radius: 22px;
                border: 1px solid #000;
                display: inline-flex;
                justify-content: space-around;
+               position: relative;
+              
                span{
                    line-height: 44px;
-               }          
+               }
+        .lie{
+            display: none;
+            width: 322px;
+            position: absolute;
+            left: 0;
+            background:#fff;
+            top:-202px;
+            height: 200px;
+            overflow:auto;
+            li{
+                padding-left: 30px;
+                span{
+                    margin-right: 10px;
+                }
+            }
+           
+
+        }   
+               
            }
         }
     }
