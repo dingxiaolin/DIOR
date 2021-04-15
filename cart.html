@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <script src="../js/jquery-1.11.3.js"></script>
+</head>
+
+<body>
+    <table class="liebiao">
+        <tr class="yi">
+            <td>
+                <input type="checkbox" class="multi">
+                <span>全选</span>
+            </td>
+            <td>图片</td>
+            <td>名称</td>
+            <td>单价</td>
+            <td>数量</td>
+            <td>单个总价</td>
+            <td>操作</td>
+        </tr>
+        <!-- <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td><img src="../img/1.png" alt=""></td>
+            <td>名称</td>
+            <td>单价</td>
+            <td>
+                <span>-</span>
+                <input type="text" class="num">
+                <span>+</span>
+            </td>
+            <td>价格</td>
+            <td>删除</td>
+        </tr> -->
+    </table>
+    <div>总计:<span class="total"></span></div>
+
+</body>
+<script>
+    $(function () {
+        let uid = JSON.parse(localStorage.getItem("user")).id;
+        console.log(uid);
+        $.get("http://jx.xuzhixiang.top/ap/api/cart-list.php", {
+            id: uid,
+
+        }).then(res => {
+            let cData = res.data;
+            console.log(cData);
+
+            let str = "";
+            for (let i in cData) {
+                var dange = cData[i].pprice * cData[i].pnum;
+                str += `
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="single">
+                            </td>
+                            <td><img src="${cData[i].pimg}" alt=""></td>
+                            <td>${cData[i].pname}</td>
+                            <td  class="singleprice">${cData[i].pprice}</td>
+                            
+                            <td>
+                                <span class="minus" data-id="${cData[i].pid}">-</span>
+                                <input type="text" class="num" value="${cData[i].pnum}">
+                                <span class="plus" data-id="${cData[i].pid}">+</span>
+                            </td>
+                            <td  class="pp">${dange}</td>
+                            <td>删除</td>
+                        </tr>
+                `;
+            }
+            $(".liebiao").append(str);
+
+            // 全选框选中时,单个选框要选中
+            $(".multi").click(function () {
+                $(".single").prop("checked", $(this).prop("checked"));
+                gettotal();
+
+            })
+            // 单个多选框选中时，判断单个多选框是否都处于选中状态
+            $(".single").click(function () {
+                if ($(".single:checked").length == $(".single").length) {
+                    $(".multi").prop("checked", true);
+                } else {
+                    $(".multi").prop("checked", false);
+                }
+                gettotal();
+            })
+
+            // 计算总价，放在total中
+            function gettotal() {
+                var total = 0;
+                // for循环遍历勾选的框的个数，获取勾选框中单个总价的价格，相加
+                for (let i = 0; i < cData.length; i++) {
+                    if ($(".single").eq(i).prop("checked") == true) {
+                        var price = $(".single").eq(i).parent().parent().find(".pp").text() * 1;
+                        total += price;
+                    } /* else {
+                        var price = $(".single").eq(i).parent().parent().find(".pp").text() * 1;
+                        total -= price;
+                    } */
+                }
+                $(".total").text("￥" + total);
+            }
+
+            for (let i = 0; i < cData.length; i++) {
+                // 减
+                $(".minus").eq(i).on("click", function () {
+                    var num = $(".num").eq(i).val() * 1;
+                    num = num - 1;
+                    console.log(num);
+                    if (num <= 1) {
+                        num = 1;
+                    }
+                    $(".num").eq(i).val(num);
+                    $(".pp").eq(i).text(num * $(".singleprice").eq(i).text());
+                    gettotal();
+                    var dataid = $(".minus").attr("data-id");
+                    $.get("http://jx.xuzhixiang.top/ap/api/cart-update-num.php", {
+                        uid: uid,
+                        pid: dataid,
+                        pnum: num
+                    }).then(res => {
+                        // console.log(res);
+                    })
+
+                })
+
+
+                // 加
+                $(".plus").eq(i).on("click", function () {
+                    var num = $(".num").eq(i).val() * 1;
+                    num = num + 1;
+                    // console.log(num);
+                    $(".num").eq(i).val(num);
+                    $(".pp").eq(i).text(num * $(".singleprice").eq(i).text());
+                    gettotal();
+
+                    var dataid = $(".plus").attr("data-id");
+                    $.get("http://jx.xuzhixiang.top/ap/api/cart-update-num.php", {
+                        uid: uid,
+                        pid: dataid,
+                        pnum: num
+                    }).then(res => {
+                        // console.log(res);
+                    })
+                })
+                // 删除
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+        })
+    })
+</script>
+
+</html>

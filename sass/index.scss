@@ -258,14 +258,13 @@ html,body{
             overflow: hidden;
             position: relative; 
             ul{  
-                width: 2460px;
+                width: 3690px;
                 position: absolute;
                 top:0;
                 left: 0;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
-                background: chartreuse;
                 li{
                     width: 360px;
                     text-align: center;
@@ -296,9 +295,8 @@ html,body{
                         }
                         span{
                             display: block;
-                            font-weight: 900;
-                            margin-bottom: 100px;
-                            
+                            font-weight: 900; 
+                            margin-bottom: 20px;  
                         }
                         .price{
                             margin-bottom: 20px;
@@ -310,6 +308,17 @@ html,body{
                             width: 160px;
                             height: 48px;
                             border-radius: 24px;
+                            display: flex;
+                            margin: 0 auto ;
+                            align-items: center;
+                            justify-content: center;
+                            i{
+                                line-height: 48px;
+                                margin-right: 6px;
+                            }
+                            span{
+                                height: 0;
+                            }
                         }
                     }
     

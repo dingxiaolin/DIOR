@@ -67,16 +67,36 @@ $(function () {
         $(window).attr('location', "html/login.html");
     })
 
-    /*  $(".jiantou").find(".zuo").click(function () {
-         console.log(this);
-         $(".luoboto >ul").stop().animate({ "left": "-1230px" })
- 
-     }) */
-    $(".jiantou").find(".right").click(function () {
-        $(".lunbotu ul").stop().animate({ "left": "-1230px" })
+    $(".jiantou").find(".zuo").click(function () {
+        var width = parseInt($(".lunbotu ul").css("left"));
+        width = width + 1230 + "px";
+        console.log(width);
+        if (width === "1230px") {
+            width = "-1230px";
+            $(".lunbotu ul").css({
+                left: "-2460px"
+            }).stop().animate({ "left": width })
+        }
+        else {
+            $(".lunbotu ul").stop().animate({ "left": width })
+        }
+
     })
 
-
+    $(".jiantou").find(".right").click(function () {
+        var left = parseInt($(".lunbotu ul").css("left"));
+        left = left - 1230 + "px";
+        // 
+        if (left === "-3690px") {
+            left = "-1230px";
+            $(".lunbotu ul").css({
+                left: 0
+            }).stop().animate({ "left": left })
+        } else {
+            $(".lunbotu ul").stop().animate({ "left": left })
+        }
+        console.log(left);
+    })
 })
 let oTop = document.getElementsByClassName("top")[0];
 oTop.onclick = function () {
@@ -93,11 +113,7 @@ oTop.onclick = function () {
         }
     }, 20);
 }
-function Slider() {
-    constructor(id) {
 
-    }
-}
 
 
 

@@ -71,11 +71,9 @@
     <script src="../js/login.js"></script>
     <script>
         $(function () {
-
             $("#zhuce").find(".btn").click(function () {
                 $(window).attr('location', "regist.html");
             });
-
 
             $(".on").click(function () {
                 $.get("http://jx.xuzhixiang.top/ap/api/login.php", {
@@ -95,17 +93,21 @@
                     username: $("#checkPhone1").val(),
                     password: $("#yanzheng1").val()
                 }, res => {
-                    console.log(res, res.code);
+                    // console.log(res, res.code);
                     if (res.code == 1) {
-                        alert("登录成功！")
+                        alert("登录成功！");
+                        let data = {
+                            id: res.data.id,
+                            token: res.data.token
+                        }
+                        $(location).attr("href", "list.html");
                     } else {
-                        alert("请先注册")
+                        alert("请先注册或者检查是否密码输入有误")
                     }
+                    localStorage.setItem("user", JSON.stringify(data));
                 })
             })
         })
-
-
     </script>
 </body>
 

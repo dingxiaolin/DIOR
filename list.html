@@ -6,9 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/list.css">
+    <script src="../js/jquery-1.11.3.js"></script>
 </head>
 
 <body>
+    <ul id="prodList">
+        <!--  <li>
+            <a href="">
+                <img src="../img/2.png" alt="">
+                <div class="info">
+                    <p>名称efghnj</p>
+                    <p>描述fds</p>
+                    <p>价格dddf</p>   
+                </div>
+            </a>
+            <input type="button" value="加入购物车">
+        </li>
+        <li></li>
+        <li></li> -->
+    </ul>
+
+    <script>
+        $.get("http://jx.xuzhixiang.top/ap/api/productlist.php", {
+            uid: "25118"
+        }, res => {
+            console.log(res.data);
+            let data = res.data;
+            let str = "";
+            for (let i in data) {
+                str += `
+            <li data-id=${data[i].pid}>
+            <a href="detail.html?id=${data[i].pid}" id="pro">
+                <img src="${data[i].pimg}">
+                <div class="info">
+                    <p>${data[i].pname}</p>
+                    <p>${data[i].pdesc}</p>
+                    <p>${data[i].pprice}</p>
+                </div>
+            </a>
+            <input type="button" value="加入购物车" data-id="${data[i].pid}">
+            </li>
+            `;
+            }
+            $("#prodList").html(str);
+            $("input").click(function () {
+                let id = $(this).attr("data-id");
+                console.log(id);
+                $.get("http://jx.xuzhixiang.top/ap/api/add-product.php", {
+                    uid: 25118,
+                    pid: id,
+                    pnum: 1
+                }).then(res => {
+                    console.log(res);
+                });
+                location.href = "cart.html";
+            })
+            $("#pro").click(function () {
+                location.href = "detail.html";
+            })
+        })
+    </script>
 
 </body>
 

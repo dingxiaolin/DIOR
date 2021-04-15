@@ -1,0 +1,28 @@
+.liebiao{
+    margin: 0 auto;
+    width: 1000px;
+    height: 210px;
+    tr{
+        margin-bottom: 10px;
+        background: #cecece;
+       td{
+           width: 60px;
+           height: 100%;
+           img{
+            height: 210px;
+           }
+       }
+    }
+}
+div{
+    margin: 0 auto;
+    width: 1000px;
+    height: 20px; 
+    background: #cecece;
+    color: #999; 
+    text-align: right;
+    span{
+        margin-left: 10px;
+        display: inline-block;
+    }
+}
