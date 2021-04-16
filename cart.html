@@ -59,7 +59,7 @@
             for (let i in cData) {
                 var dange = cData[i].pprice * cData[i].pnum;
                 str += `
-                        <tr>
+                        <tr  data-id="${cData[i].pid}" class="pro">
                             <td>
                                 <input type="checkbox" class="single">
                             </td>
@@ -68,12 +68,12 @@
                             <td  class="singleprice">${cData[i].pprice}</td>
                             
                             <td>
-                                <span class="minus" data-id="${cData[i].pid}">-</span>
+                                <span class="minus" >-</span>
                                 <input type="text" class="num" value="${cData[i].pnum}">
-                                <span class="plus" data-id="${cData[i].pid}">+</span>
+                                <span class="plus">+</span>
                             </td>
                             <td  class="pp">${dange}</td>
-                            <td>删除</td>
+                            <td class="delet">删除</td>
                         </tr>
                 `;
             }
@@ -123,13 +123,13 @@
                     $(".num").eq(i).val(num);
                     $(".pp").eq(i).text(num * $(".singleprice").eq(i).text());
                     gettotal();
-                    var dataid = $(".minus").attr("data-id");
+                    var dataid = $(".pro").attr("data-id");
                     $.get("http://jx.xuzhixiang.top/ap/api/cart-update-num.php", {
                         uid: uid,
                         pid: dataid,
                         pnum: num
                     }).then(res => {
-                        // console.log(res);
+                        console.log(res);
                     })
 
                 })
@@ -144,7 +144,7 @@
                     $(".pp").eq(i).text(num * $(".singleprice").eq(i).text());
                     gettotal();
 
-                    var dataid = $(".plus").attr("data-id");
+                    var dataid = $(".pro").attr("data-id");
                     $.get("http://jx.xuzhixiang.top/ap/api/cart-update-num.php", {
                         uid: uid,
                         pid: dataid,
@@ -153,24 +153,37 @@
                         // console.log(res);
                     })
                 })
+
+                // 直接输入
+                $(".num").eq(i).change(function () {
+
+                    var num = $(".num").eq(i).val() * 1;
+                    $(".num").eq(i).val(num);
+                    $(".pp").eq(i).text(num * $(".singleprice").eq(i).text());
+                    gettotal();
+
+                    var dataid = $(".pro").attr("data-id");
+                    $.get("http://jx.xuzhixiang.top/ap/api/cart-update-num.php", {
+                        uid: uid,
+                        pid: dataid,
+                        pnum: $(".num").eq(i).val()
+                    }).then(res => {
+                        // console.log(res);
+                    })
+                })
                 // 删除
-
-
-
-
+                $(".delet").eq(i).click(function () {
+                    $(this).parent().remove();
+                    gettotal();
+                    var dataid = $(".pro").attr("data-id");
+                    $.get("http://jx.xuzhixiang.top/ap/api/cart-delete.php", {
+                        uid: uid,
+                        pid: dataid
+                    }).then(res => {
+                        console.log(res);
+                    })
+                })
             }
-
-
-
-
-
-
-
-
-
-
-
-
         })
     })
 </script>

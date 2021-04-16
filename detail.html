@@ -25,39 +25,67 @@
             id: pid
         }).then(res => {
             console.log(res, res.data);
+            let user = res.data.uid;
+            console.log(user);
             $("#detail").html(`
-            <img src="${res.data.pimg}">
-            <span class="minus">-</span>
-            <input type="text" value="1" class="num">
-            <span class="plus">+</span>
-            <input type="button" value="加入购物车" class="btn">`);
+                    <dl>
+                        <img src="${res.data.pimg}">
+                    </dl>
+                    <dt>
+                        <h1>${res.data.pname}</h1>
+                        <p>${res.data.pdesc}</p>
+                        <h2><span>￥<span>${res.data.pprice}</h2>
+                        <div>
+                            <span class="minus">-</span>
+                            <input type="text" value="1" class="num">
+                            <span class="plus">+</span>
+                        </div>
+                        <input type="button" value="加入购物车" class="btn">
+                    <dt>
+                    `);
 
             $(".minus").click(function () {
-                $.get("http://jx.xuzhixiang.top/ap/api/add-product.php", {
-                    uid: 25118,
-                    pid: pid,
-                    pnum: -1
-                }).then(res => {
-                    console.log(res);
-                });
-                $(".num").val()--;
-                console.log($(".num").val());
-                if ($(".num").val() <= 1) {
-                    $(".num").val() == 1;
+                var num = Number($(".num").eq(0).val());
+                if (num <= 2) {
+                    num = 2;
                 }
+                num = num - 1;
+                $(".num").eq(0).val(num);
+                // $.get("http://jx.xuzhixiang.top/ap/api/add-product.php", {
+                //     uid: user,
+                //     pid: pid,
+                //     pnum: -1
+                // }).then(res => {
+                //     console.log(res);
+                // });
+                console.log($(".num").val());
             })
             $(".plus").click(function () {
+                var num = Number($(".num").eq(0).val());
+                num = num + 1;
+                $(".num").eq(0).val(num);
+                // $.get("http://jx.xuzhixiang.top/ap/api/add-product.php", {
+                //     uid: user,
+                //     pid: pid,
+                //     pnum: 1
+                // }).then(res => {
+                //     // console.log(res);
+                // });
+            })
+
+            $(".btn").click(function () {
+
+                location.href = "cart.html";
+                var num = $(".num").eq(0).val();
+                console.log($(".num").eq(0), num);
+
                 $.get("http://jx.xuzhixiang.top/ap/api/add-product.php", {
-                    uid: 25118,
+                    uid: user,
                     pid: pid,
-                    pnum: 1
+                    pnum: num,
                 }).then(res => {
                     console.log(res);
-                });
-                $(".num").val()++;
-            })
-            $(".btn").click(function () {
-                location.href = "cart.html";
+                })
             })
         })
     </script>
